@@ -208,72 +208,105 @@ This file is generated from repository truth and bounded for the web channel. It
     "acceptance": {
       "policy": "solution-admission-v1"
     },
-    "aliases": [],
+    "aliases": [
+      "Open Problem Garden OPG-34915"
+    ],
     "allowed_axioms": [
-      "none"
+      "finite-graph-basic",
+      "spherical-geometry",
+      "finite-combinatorics"
     ],
     "assumptions": [
-      "This record must never be treated as an active research problem."
+      "All graphs and digraphs are finite and simple unless the statement explicitly says otherwise."
     ],
     "constraints": {
       "allowed_adapters": [
-        "template-validation-v1"
+        "great-circle-arrangement-enumerator-v1",
+        "graph-coloring-sat-v1",
+        "lean-obligation-v1"
       ],
       "allowed_methods": [
-        "discovery"
+        "discovery",
+        "derivation",
+        "computation",
+        "proof",
+        "formalization"
       ],
-      "max_attempts": 1,
+      "max_attempts": 20,
       "runtime": {
-        "max_output_bytes": 65536,
-        "max_retries": 1,
-        "max_transitions": 10,
-        "timeout_seconds": 60
+        "max_output_bytes": 5242880,
+        "max_retries": 3,
+        "max_transitions": 300,
+        "timeout_seconds": 1800
       }
     },
-    "created_at": "2026-09-06T00:00:00Z",
+    "created_at": "2026-09-06T04:47:54Z",
     "definitions": [
       {
-        "definition": "A non-admitted draft record used only to validate the physical public repository template.",
-        "term": "template placeholder"
+        "definition": "The graph whose vertices are pairwise intersection points of circles and whose edges are the circle arcs between consecutive intersection points.",
+        "term": "arrangement graph"
+      },
+      {
+        "definition": "No three great circles pass through one common point.",
+        "term": "simple arrangement"
+      },
+      {
+        "definition": "A vertex coloring with three colors in which adjacent vertices have distinct colors.",
+        "term": "proper 3-coloring"
       }
     ],
     "domain": {
-      "description": "Template-only placeholder domain; not a mathematical research question.",
+      "description": "Simple finite arrangements of great circles on the sphere and their embedded arrangement graphs.",
       "objects": [
-        "template-placeholder"
+        "great-circle arrangement",
+        "arrangement graph",
+        "proper vertex coloring"
       ]
     },
-    "lifecycle": "draft",
+    "lifecycle": "active",
     "msc": [
-      "00A00"
+      "05C15"
     ],
-    "problem_id": "problem:template-placeholder",
+    "problem_id": "problem:opg-34915-great-circle-arrangement-coloring",
     "quantifiers": [
       {
-        "domain": "a reviewed public canonical ProblemContract supplied by the repository builder",
-        "kind": "find",
+        "domain": "finite sets of great circles on the sphere with no triple concurrence",
+        "kind": "forall",
         "variables": [
-          "replacement_problem"
+          "S"
+        ]
+      },
+      {
+        "domain": "proper vertex colorings of the arrangement graph using at most three colors",
+        "kind": "exists",
+        "variables": [
+          "c"
         ]
       }
     ],
     "schema_version": "1.0.0",
     "sources": [
       {
-        "retrieved_at": "2026-09-06T00:00:00Z",
-        "source": "Vibe Mathing public Web Harness",
-        "source_record_id": "public-template-placeholder-v1",
-        "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template"
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath",
+        "source_record_id": "unsolvedmath-opg-34915-17305f4dd2eb",
+        "url": "https://www.unsolvedmath.com/problems/OPG-34915"
+      },
+      {
+        "retrieved_at": "2026-09-06T04:47:54Z",
+        "source": "current-status-review",
+        "source_record_id": null,
+        "url": "https://www.unsolvedmath.com/problems/OPG-34915"
       }
     ],
     "statement": {
       "language": "en",
-      "text": "This is a non-research placeholder. Replace it with exactly one reviewed public ProblemContract before creating a public problem repository.",
+      "text": "Is the arrangement graph of every finite set of great circles on the sphere with no three circles meeting at one point properly vertex 3-colorable?",
       "version": 1
     },
-    "title": "Vibe Mathing public problem repository template placeholder",
-    "updated_at": "2026-09-06T00:00:00Z"
+    "title": "3-colorability of arrangements of great circles",
+    "updated_at": "2026-09-06T04:47:54Z"
   },
-  "problem_contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940"
+  "problem_contract_sha256": "128aad6d1052bf0e001b87d78ce5bf10aac82f5007ea25ea50a784b46e468289"
 }
 ```
